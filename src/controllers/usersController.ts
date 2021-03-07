@@ -50,7 +50,9 @@ export class UsersController {
         },
       })
       .then(user => {
-        userFound = !!user;
+        if (user.length > 1) {
+          userFound = true;
+        }
       });
 
     if (userFound) {
